@@ -5,8 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_DISPATCHER } from './core/tokens/app-dispatcher.token';
 import { CoreModule } from './core/core.module';
-import { PageModule } from './page/page.module';
-import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -16,8 +14,6 @@ import { PagesModule } from './pages/pages.module';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    PageModule,
-    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
