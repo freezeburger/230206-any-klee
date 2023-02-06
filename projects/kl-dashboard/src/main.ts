@@ -11,11 +11,13 @@ platformBrowserDynamic(
       useValue:() => console.warn('Application is ready !'),
       multi:true
     },
+    /*     
     {
       provide:PLATFORM_INITIALIZER,
       useValue:() => alert('Platform is ready !'),
       multi:true
-    },
+    }, 
+    */
     {
       provide:PLATFORM_INITIALIZER,
       useValue:() => console.warn('Platform is ready !'),
