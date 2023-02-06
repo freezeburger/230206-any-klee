@@ -8,8 +8,14 @@
     "build:pwa": "ng build --project=kl-pwa",
     "start:dashboard": "ng serve --project=kl-dashboard",
     "build:dashboard": "ng build --project=kl-dashboard",
+    
     "build:klg": "ng build --project=klg",
     "build:klg-login": "ng build --project=klg-login",
+
+    "prepack:klg": "npm run build:klg",
+    "prepack:klg-login": "npm run build:klg-login",
+    "pack:klg": "npm pack ./dist/klg --pack-destination=./distributions",
+    "pack:klg-login": "npm pack ./dist/klg-login --pack-destination=./distributions",
     
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

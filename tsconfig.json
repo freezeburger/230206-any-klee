@@ -10,7 +10,7 @@
     "noPropertyAccessFromIndexSignature": true,
     "paths": {
       "klg": [
-        "dist/klg"
+        "projects/klg/src/public-api.ts"
       ],
       "klg-login": [
         "dist/klg-login"
