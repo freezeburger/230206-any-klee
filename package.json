@@ -3,22 +3,25 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-
     "start:pwa": "ng serve --project=kl-pwa",
     "build:pwa": "ng build --project=kl-pwa",
     "start:dashboard": "ng serve --project=kl-dashboard",
     "build:dashboard": "ng build --project=kl-dashboard",
-    
     "build:klg": "ng build --project=klg",
     "build:klg-login": "ng build --project=klg-login",
-
     "prepack:klg": "npm run build:klg",
     "prepack:klg-login": "npm run build:klg-login",
     "pack:klg": "npm pack ./dist/klg --pack-destination=./distributions",
     "pack:klg-login": "npm pack ./dist/klg-login --pack-destination=./distributions",
-    
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+
+    "compodoc:dashboard:build": "compodoc -p ./projects/kl-dashboard/tsconfig.doc.json --output documentation/kl-dashboard",
+    "compodoc:dashboard:build-and-serve": "compodoc -p ./projects/kl-dashboard/tsconfig.doc.json -s --output documentation/kl-dashboard",
+
+    "compodoc:pwa:build": "compodoc -p ./projects/kl-pwa/tsconfig.doc.json --output documentation/kl-pwa",
+    "compodoc:pwa:build-and-serve": "compodoc -p ./projects/kl-pwa/tsconfig.doc.json -s --output documentation/kl-pwa"
+  
   },
   "private": true,
   "dependencies": {
@@ -30,6 +33,7 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
+    "@compodoc/compodoc": "^1.1.19",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
