@@ -1,8 +1,12 @@
-import { NgModule } from '@angular/core';
+import { Inject, NgModule, Optional } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { APP_DISPATCHER } from './core/tokens/app-dispatcher.token';
+import { CoreModule } from './core/core.module';
+import { PageModule } from './page/page.module';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -10,9 +14,20 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CoreModule,
+    PageModule,
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+  constructor(
+    @Optional() @Inject(APP_DISPATCHER) appDispatcher:any
+  ){
+    console.warn('AppModule', {appDispatcher});
+  }
+
+}
