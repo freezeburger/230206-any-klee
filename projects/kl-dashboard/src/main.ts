@@ -4,6 +4,9 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 
 
+/* import('./module-js-theory').then(  m => console.log('Script Loaded', m) );
+console.log('Getting Script'); */
+
 platformBrowserDynamic(
   [
     {

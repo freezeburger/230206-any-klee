@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import { KlgImportModule } from './klg-import.module';
+import { NgImportModule } from './ng-import.module';
 
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
+  exports: [
+    NgImportModule,
+    KlgImportModule
   ]
 })
 export class SharedModule { }

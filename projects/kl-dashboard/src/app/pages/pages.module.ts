@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { LayoutsModule } from '../layouts/layouts.module';
 import { FeaturesModule } from '../features/features.module';
-
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
+    SharedModule,
     LayoutsModule,
     FeaturesModule
   ]
