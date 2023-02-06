@@ -3,8 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+
+    "start:pwa": "ng serve --project=kl-pwa",
+    "build:pwa": "ng build --project=kl-pwa",
+    "start:dashboard": "ng serve --project=kl-dashboard",
+    "build:dashboard": "ng build --project=kl-dashboard",
+    "build:klg": "ng build --project=klg",
+    "build:klg-login": "ng build --project=klg-login",
+    
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -33,6 +39,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "ng-packagr": "^15.0.0",
     "typescript": "~4.8.2"
   }
 }

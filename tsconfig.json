@@ -8,6 +8,14 @@
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
+    "paths": {
+      "klg": [
+        "dist/klg"
+      ],
+      "klg-login": [
+        "dist/klg-login"
+      ]
+    },
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,

@@ -3,34 +3,34 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "altas": {
+    "kl-pwa": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "",
-      "sourceRoot": "src",
+      "root": "projects/kl-pwa",
+      "sourceRoot": "projects/kl-pwa/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/altas",
-            "index": "src/index.html",
-            "main": "src/main.ts",
+            "outputPath": "dist/kl-pwa",
+            "index": "projects/kl-pwa/src/index.html",
+            "main": "projects/kl-pwa/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "tsconfig.app.json",
+            "tsConfig": "projects/kl-pwa/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/kl-pwa/src/favicon.ico",
+              "projects/kl-pwa/src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "projects/kl-pwa/src/styles.scss"
             ],
             "scripts": []
           },
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "altas:build:production"
+              "browserTarget": "kl-pwa:build:production"
             },
             "development": {
-              "browserTarget": "altas:build:development"
+              "browserTarget": "kl-pwa:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "altas:build"
+            "browserTarget": "kl-pwa:build"
           }
         },
         "test": {
@@ -86,16 +86,179 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "tsconfig.spec.json",
+            "tsConfig": "projects/kl-pwa/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/kl-pwa/src/favicon.ico",
+              "projects/kl-pwa/src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "projects/kl-pwa/src/styles.scss"
             ],
             "scripts": []
+          }
+        }
+      }
+    },
+    "kl-dashboard": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/kl-dashboard",
+      "sourceRoot": "projects/kl-dashboard/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/kl-dashboard",
+            "index": "projects/kl-dashboard/src/index.html",
+            "main": "projects/kl-dashboard/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/kl-dashboard/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/kl-dashboard/src/favicon.ico",
+              "projects/kl-dashboard/src/assets"
+            ],
+            "styles": [
+              "projects/kl-dashboard/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "kl-dashboard:build:production"
+            },
+            "development": {
+              "browserTarget": "kl-dashboard:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "kl-dashboard:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/kl-dashboard/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/kl-dashboard/src/favicon.ico",
+              "projects/kl-dashboard/src/assets"
+            ],
+            "styles": [
+              "projects/kl-dashboard/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "klg": {
+      "projectType": "library",
+      "root": "projects/klg",
+      "sourceRoot": "projects/klg/src",
+      "prefix": "klg",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/klg/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/klg/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/klg/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/klg/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "klg-login": {
+      "projectType": "library",
+      "root": "projects/klg-login",
+      "sourceRoot": "projects/klg-login/src",
+      "prefix": "klg-login",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/klg-login/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/klg-login/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/klg-login/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/klg-login/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         }
       }
