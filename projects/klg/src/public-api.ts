@@ -9,6 +9,8 @@ export * from './lib/button/button.component';
 
 export * from './lib/card/card.module';
 export * from './lib/card/card.component';
+export * from './lib/card/card-title.component';
+export * from './lib/card/card-content.component';
 
 export * from './lib/container/container.module';
 export * from './lib/container/container.component';

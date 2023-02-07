@@ -23,3 +23,7 @@
     background-color: #f38357; 
 }
 
+:host>:nth-child(2){
+    padding: 10px;
+}
+

@@ -8,5 +8,5 @@ import { NgImportModule } from './ng-import.module';
     NgImportModule,
     KlgImportModule
   ]
-})
+}) 
 export class SharedModule { }

@@ -1,8 +1,9 @@
 
 <div>
-    &nbsp; <ng-content></ng-content> 
+    &nbsp; 
+    <ng-content select="klg-card-title"></ng-content>
     <klg-button (click)=" open = !open ">{{ open ? 'X' : '▼' }}</klg-button>
 </div>
 <div *ngIf="open">
-    <ng-content select=".card-content"></ng-content>
+    <ng-content select="klg-card-content"></ng-content>
 </div>
