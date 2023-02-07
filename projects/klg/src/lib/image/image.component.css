@@ -1,0 +1,30 @@
+:host{
+    margin:5px;
+    display: inline-flex;
+    flex-direction: column;
+    position:relative;
+    overflow: hidden;
+}
+
+:host:after{
+   content:'';
+   width:75px;
+   height:75px;
+   background-color: #ffca33;
+   position:absolute;
+   top:-50px;
+   right:0;
+   transform: rotate(45deg);
+   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.391);
+}
+
+:host>div{
+    text-transform: capitalize;
+    color:white;
+    font-family: Arial;
+    background-color: black;
+    font-size: .5em;
+    min-height: 20px;
+    line-height: 20px;
+    padding-left: 10px;
+}
