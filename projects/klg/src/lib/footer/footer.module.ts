@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer.component';
+import { NgImportModule } from '../ng-import.module';
 
 
 
@@ -9,7 +9,7 @@ import { FooterComponent } from './footer.component';
     FooterComponent
   ],
   imports: [
-    CommonModule
+    NgImportModule
   ],
   exports: [
     FooterComponent

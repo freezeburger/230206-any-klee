@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ContainerComponent } from './container.component';
+import { NgImportModule } from '../ng-import.module';
 
 
 
@@ -9,7 +9,7 @@ import { ContainerComponent } from './container.component';
     ContainerComponent
   ],
   imports: [
-    CommonModule
+    NgImportModule
   ],
   exports: [
     ContainerComponent

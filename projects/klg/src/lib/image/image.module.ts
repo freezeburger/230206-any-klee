@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ImageComponent } from './image.component';
+import { NgImportModule } from '../ng-import.module';
 
 
 
@@ -9,7 +9,7 @@ import { ImageComponent } from './image.component';
     ImageComponent
   ],
   imports: [
-    CommonModule
+    NgImportModule
   ],
   exports: [
     ImageComponent
