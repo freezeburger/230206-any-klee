@@ -74,13 +74,15 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
-
-
+import { HttpClientModule } from &#x27;@angular/common/http&#x27;;
+import { FormsModule,  ReactiveFormsModule  } from &#x27;@angular/forms&#x27;;
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
+  exports: [
+    CommonModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ]
 })
 export class NgImportModule { }
