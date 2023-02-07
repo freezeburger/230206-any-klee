@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import { ButtonModule, HeaderModule } from 'klg';
 
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
+  exports: [
+    HeaderModule,
+    ButtonModule
   ]
 })
 export class KlgImportModule { }

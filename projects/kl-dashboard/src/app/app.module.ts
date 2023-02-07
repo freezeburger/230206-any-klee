@@ -22,7 +22,7 @@ import { PagesModule } from './pages/pages.module';
 export class AppModule { 
   
   constructor(
-    @Optional() @Inject(APP_DISPATCHER) appDispatcher:any
+    @Optional() @Inject( APP_DISPATCHER )  appDispatcher:any
   ){
     console.warn('AppModule', {appDispatcher});
   }

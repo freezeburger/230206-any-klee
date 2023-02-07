@@ -4,9 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start:pwa": "ng serve --project=kl-pwa",
-    "build:pwa": "ng build --project=kl-pwa",
+    "build:pwa": "ng build --project=kl-pwa  --stats-json",
+
     "start:dashboard": "ng serve --project=kl-dashboard",
-    "build:dashboard": "ng build --project=kl-dashboard",
+    "build:dashboard": "ng build --project=kl-dashboard --stats-json",
+    "preanalyze:dashboard": "npm run build:dashboard",
+    "analyze:dashboard": "webpack-bundle-analyzer ./dist/kl-dashboard/stats.json",
+
     "build:klg": "ng build --project=klg",
     "build:klg-login": "ng build --project=klg-login",
     "prepack:klg": "npm run build:klg",
@@ -15,13 +19,10 @@
     "pack:klg-login": "npm pack ./dist/klg-login --pack-destination=./distributions",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-
     "compodoc:dashboard:build": "compodoc -p ./projects/kl-dashboard/tsconfig.doc.json --output documentation/kl-dashboard",
     "compodoc:dashboard:build-and-serve": "compodoc -p ./projects/kl-dashboard/tsconfig.doc.json -s --output documentation/kl-dashboard",
-
     "compodoc:pwa:build": "compodoc -p ./projects/kl-pwa/tsconfig.doc.json --output documentation/kl-pwa",
     "compodoc:pwa:build-and-serve": "compodoc -p ./projects/kl-pwa/tsconfig.doc.json -s --output documentation/kl-pwa"
-  
   },
   "private": true,
   "dependencies": {
@@ -50,6 +51,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "ng-packagr": "^15.0.0",
-    "typescript": "~4.8.2"
+    "typescript": "~4.8.2",
+    "webpack-bundle-analyzer": "^4.7.0"
   }
 }
