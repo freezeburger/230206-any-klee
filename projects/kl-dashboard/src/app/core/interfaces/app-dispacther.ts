@@ -8,12 +8,19 @@ export interface AppAction{
 export type MessageLevel = 1 | 2 | 3;
 
 export interface Message{
-    id:number;
+    readonly id:number;
     timestamp:number;
     title:string;
     content:string;
     level:MessageLevel;
 }
+
+// export type tweet = { [key in keyof Message]: any };
+
+// export type tweet = Partial<Message>;
+
+// export type tweet = Pick<Message, 'id'>;
+// export type tweet = Omit<Message, 'id'>;
 
 export interface AppState{
     messages:Array<Message>;
