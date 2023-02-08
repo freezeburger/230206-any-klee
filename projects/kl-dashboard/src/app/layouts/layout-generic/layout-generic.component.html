@@ -1,4 +1,3 @@
-
 <klg-header>
     {{pageTitle}}
 </klg-header>
@@ -6,7 +5,12 @@
 <klg-button>connexion</klg-button>
 
 <div>
-    <a [routerLink]=" ['/', nav ]" *ngFor="let nav of navLinks">{{nav | uppercase}}</a>
+    <a 
+        [klgZoom]="0.8" 
+        [routerLink]=" ['/', nav ]" 
+        *ngFor="let nav of navLinks">
+        {{nav | uppercase}}
+    </a>
 </div>
 
 <klg-container>
@@ -14,4 +18,3 @@
 </klg-container>
 
 <klg-footer></klg-footer>
-
