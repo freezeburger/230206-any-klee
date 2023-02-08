@@ -1,5 +1,19 @@
 # Angular
 
+
+# Update
+
+* Les librairies facilitent le travail CSS
+    * Penser au selector `:host`
+* Analyser l'application dans la console.
+    * Chromium  - Performance monitor.
+    * Angular Devtools Performance.
+* Améliorer l'expérience développeur lors la création de composant.
+* `<ng-content>` apporte puissance et simplicité.
+* Activer le `ChangeDetecttionStrategy.onPush`
+* Analyzer le bundle applicatif.
+
+
 # Code Smell
 
 > Actant que angular utilise une **component based architecture**
