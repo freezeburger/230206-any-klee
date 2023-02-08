@@ -3,6 +3,7 @@ import {
     ButtonModule, 
     CardModule, 
     ContainerModule, 
+    DirectivesModule, 
     FooterModule, 
     HeaderModule, 
     ImageModule, 
@@ -20,7 +21,8 @@ import {
     HeaderModule,
     ImageModule,
     InputModule,
-    MenuModule
+    MenuModule,
+    DirectivesModule
   ]
 })
 export class KlgImportModule { }
