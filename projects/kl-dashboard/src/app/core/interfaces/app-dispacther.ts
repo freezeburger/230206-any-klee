@@ -9,7 +9,7 @@ export type MessageLevel = 1 | 2 | 3;
 
 export interface Message{
     id:number;
-    timestamp:string;
+    timestamp:number;
     title:string;
     content:string;
     level:MessageLevel;

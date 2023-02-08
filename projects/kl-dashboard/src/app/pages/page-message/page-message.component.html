@@ -1,4 +1,11 @@
 <app-layout-generic pageTitle="Message">
+
+    <code>
+        {{
+            ( dispatcher.state$ | async )?.messages | json
+        }}
+    </code>
     
+    <app-feat-message></app-feat-message>
 
 </app-layout-generic>

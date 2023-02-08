@@ -75,8 +75,27 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 import { PageHomeComponent } from &#x27;./pages/page-home/page-home.component&#x27;;
+import { PageInfosComponent } from &#x27;./pages/page-infos/page-infos.component&#x27;;
+import { PageLoginComponent } from &#x27;./pages/page-login/page-login.component&#x27;;
+import { PageMessageComponent } from &#x27;./pages/page-message/page-message.component&#x27;;
 
 const routes: Routes &#x3D; [
+  {
+    path:&#x27;messages&#x27;,
+    component:PageMessageComponent
+  },
+  {
+    path:&#x27;infos&#x27;,
+    component:PageInfosComponent
+  },
+  {
+    path:&#x27;login&#x27;,
+    component:PageLoginComponent
+  },
+  {
+    path:&#x27;home&#x27;,
+    component:PageHomeComponent
+  },
   {
     path:&#x27;**&#x27;,
     component:PageHomeComponent

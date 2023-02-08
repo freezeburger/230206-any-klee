@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { DispatcherService } from './dispatcher/dispatcher.service';
 import { AuthService } from './services/auth.service';
 import { MessageService } from './services/message.service';

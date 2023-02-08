@@ -141,7 +141,10 @@ export class PageInfosComponent {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;page-infos works!&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;app-layout-generic pageTitle&#x3D;&quot;Infos&quot;&gt;
+    
+
+&lt;/app-layout-generic&gt;
 </code></pre>
     </div>
 
@@ -177,7 +180,7 @@ export class PageInfosComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>page-infos works!</p></div>'
+        var COMPONENT_TEMPLATE = '<div><app-layout-generic pageTitle="Infos">    </app-layout-generic></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FeatMessageComponent', 'selector': 'app-feat-message'},{'name': 'LayoutGenericComponent', 'selector': 'app-layout-generic'},{'name': 'LayoutTileComponent', 'selector': 'app-layout-tile'},{'name': 'LayoutTwoColumnComponent', 'selector': 'app-layout-two-column'},{'name': 'PageHomeComponent', 'selector': 'app-page-home'},{'name': 'PageInfosComponent', 'selector': 'app-page-infos'},{'name': 'PageLoginComponent', 'selector': 'app-page-login'},{'name': 'PageMessageComponent', 'selector': 'app-page-message'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PageInfosComponent'};

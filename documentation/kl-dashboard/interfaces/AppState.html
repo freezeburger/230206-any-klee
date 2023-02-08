@@ -28,17 +28,26 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content component">
+               <div class="content interface">
                    <div class="content-data">
 
 
 
 
+
+
+
+
+
+
+
+
+
 <ol class="breadcrumb">
-  <li>Components</li>
+  <li>Interfaces</li>
   <li
   >
-  PageMessageComponent</li>
+  AppState</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -48,153 +57,128 @@
         <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
-        </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
-    <h3>File</h3>
-</p>
-<p class="comment">
-    <code>projects/kl-dashboard/src/app/pages/page-message/page-message.component.ts</code>
-</p>
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>projects/kl-dashboard/src/app/core/interfaces/app-dispacther.ts</code>
+        </p>
+
+
+
+
+        <section>
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#messages" 
+>
+                                            messages
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="messages"></a>
+                                        <span class="name "><b>messages</b>
+                                            <a href="#messages">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>messages:         <code><a href="../interfaces/Message.html" target="_self" >Array&lt;Message&gt;</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="../interfaces/Message.html" target="_self" >Array&lt;Message&gt;</a></code>
+
+                                        </td>
+                                    </tr>
 
 
 
 
 
-
-<section>
-    <h3>Metadata</h3>
-    <table class="table table-sm table-hover metadata">
-        <tbody>
-
-
-
-
-
-
-
-
-
-
-
-            <tr>
-                <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-page-message</code></td>
-            </tr>
-
-            <tr>
-                <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./page-message.component.scss</code></td>
-            </tr>
-
-
-
-            <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./page-message.component.html</code></td>
-            </tr>
-
-
-
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
-
-
-
-
-
-
-
-
-
-</div>
+                        </tbody>
+                    </table>
+            </section>
+    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BehaviorSubject } from &quot;rxjs&quot;;
 
-@Component({
-  selector: &#x27;app-page-message&#x27;,
-  templateUrl: &#x27;./page-message.component.html&#x27;,
-  styleUrls: [&#x27;./page-message.component.scss&#x27;]
-})
-export class PageMessageComponent {
-
+export interface AppAction{
+    type:string;
+    payload:any;
 }
-</code></pre>
+
+export type MessageLevel &#x3D; 1 | 2 | 3;
+
+export interface Message{
+    id:number;
+    timestamp:string;
+    title:string;
+    content:string;
+    level:MessageLevel;
+}
+
+export interface AppState{
+    messages:Array&lt;Message&gt;;
+}
+
+export interface AppDispatcher{
+
+    /* 
+        Observable - (fromFactory, Explicit)
+
+        Subject
+        BehaviorSubject
+        ReplaySubject
+
+        AsyncSubject
+    */
+
+    state$:BehaviorSubject&lt;AppState&gt;;
+    action$:BehaviorSubject&lt;AppAction&gt;;
+
+    dispatch(action:any):unknown;
+
+}</code></pre>
     </div>
-
-    <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;app-layout-generic pageTitle&#x3D;&quot;Message&quot;&gt;
-    
-
-&lt;/app-layout-generic&gt;
-</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-styleData">
-                <p class="comment">
-                    <code>./page-message.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-tree">
-        <div id="tree-container"></div>
-        <div class="tree-legend">
-            <div class="title">
-                <b>Legend</b>
-            </div>
-            <div>
-                <div class="color htmlelement"></div><span>Html element</span>
-            </div>
-            <div>
-                <div class="color component"></div><span>Component</span>
-            </div>
-            <div>
-                <div class="color directive"></div><span>Html element with directive</span>
-            </div>
-        </div>
-    </div>
-
-    
 </div>
-
-<script src="../js/libs/vis.min.js"></script>
-<script src="../js/libs/htmlparser.js"></script>
-<script src="../js/libs/deep-iterator.js"></script>
-<script>
-        var COMPONENT_TEMPLATE = '<div><app-layout-generic pageTitle="Message">    </app-layout-generic></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FeatMessageComponent', 'selector': 'app-feat-message'},{'name': 'LayoutGenericComponent', 'selector': 'app-layout-generic'},{'name': 'LayoutTileComponent', 'selector': 'app-layout-tile'},{'name': 'LayoutTwoColumnComponent', 'selector': 'app-layout-two-column'},{'name': 'PageHomeComponent', 'selector': 'app-page-home'},{'name': 'PageInfosComponent', 'selector': 'app-page-infos'},{'name': 'PageLoginComponent', 'selector': 'app-page-login'},{'name': 'PageMessageComponent', 'selector': 'app-page-message'}];
-    var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'PageMessageComponent'};
-</script>
-<script src="../js/tree.js"></script>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -228,8 +212,8 @@ export class PageMessageComponent {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'PageMessageComponent.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppState.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
