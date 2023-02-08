@@ -4,13 +4,6 @@ import { AppAction, AppDispatcher, AppState } from '../interfaces/app-dispacther
 
 const initialState:AppState = {
   messages:[
-    {
-      id:1,
-      level:2,
-      content:'Hello World',
-      title:'First Message',
-      timestamp:Date.now()
-    }
   ]
 }
 
@@ -25,6 +18,9 @@ export class DispatcherService implements AppDispatcher{
   dispatch(action: any): unknown {
     console.log(action);
     this.action$.next(action);
+
+    if(action.type === 'NEW_MESSAGES') this.state$.next( {messages:action.payload} )
+
     return;
   }
   

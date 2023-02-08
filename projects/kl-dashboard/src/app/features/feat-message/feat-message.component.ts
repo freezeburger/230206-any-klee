@@ -12,7 +12,7 @@ export class FeatMessageComponent {
   constructor(
     @Inject(APP_DISPATCHER) public dispatcher:AppDispatcher
   ){
-    this.dispatcher.dispatch({type:'GET_MESSAGES',payload:null})
+    //this.dispatcher.dispatch({type:'GET_MESSAGES',payload:null})
   }
   
 }
