@@ -29,3 +29,7 @@ export * from './lib/input/input.component';
 
 export * from './lib/menu/menu.module';
 export * from './lib/menu/menu.component';
+
+export * from './lib/directives/directives.module';
+export * from './lib/directives/pausable.directive';
+export * from './lib/directives/zoom.directive';

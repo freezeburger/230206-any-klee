@@ -20,9 +20,7 @@ import { DirectivesModule } from './directives/directives.module';
     HeaderModule,
     ImageModule,
     InputModule,
-    MenuModule
-  ],
-  imports: [
+    MenuModule,
     DirectivesModule
   ]
 })
