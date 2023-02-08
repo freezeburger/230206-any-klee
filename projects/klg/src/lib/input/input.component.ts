@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ControlValueAccessor } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, forwardRef } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 
 abstract class CustomValueAccessor implements ControlValueAccessor{
@@ -17,9 +17,11 @@ abstract class CustomValueAccessor implements ControlValueAccessor{
   registerOnChange(fn: any): void {
     this.onChange = fn;
   }
+
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
   }
+  
   setDisabledState?(isDisabled: boolean): void {
     this.disabled = isDisabled;
   }
@@ -30,7 +32,14 @@ abstract class CustomValueAccessor implements ControlValueAccessor{
   selector: 'klg-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.css'],
-  changeDetection:ChangeDetectionStrategy.OnPush
+  changeDetection:ChangeDetectionStrategy.OnPush,
+  providers: [
+    { 
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => InputComponent),
+      multi: true
+    }
+  ]
 })
 export class InputComponent extends CustomValueAccessor {
     constructor(){
