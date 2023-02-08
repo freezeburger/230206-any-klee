@@ -7,6 +7,7 @@ import { HeaderModule } from './header/header.module';
 import { ImageModule } from './image/image.module';
 import { InputModule } from './input/input.module';
 import { MenuModule } from './menu/menu.module';
+import { DirectivesModule } from './directives/directives.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,9 @@ import { MenuModule } from './menu/menu.module';
     ImageModule,
     InputModule,
     MenuModule
+  ],
+  imports: [
+    DirectivesModule
   ]
 })
 export class KlgModule { }
