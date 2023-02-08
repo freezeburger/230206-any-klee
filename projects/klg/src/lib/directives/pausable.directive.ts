@@ -1,4 +1,6 @@
-import { Directive, HostListener, Renderer2 } from '@angular/core';
+import { Directive, HostListener, Inject, Optional, Renderer2 } from '@angular/core';
+import { KlgDispatcher } from '../interfaces/klg-dispatcher';
+import { KLG_DISPATCHER } from '../tokens/klg-dispatcher.token';
 
 @Directive({
   selector: '[klgPausable]'
@@ -9,7 +11,8 @@ export class PausableDirective {
   layer:any = this.renderer.createElement('div');
 
   constructor(
-    private renderer:Renderer2
+    private renderer:Renderer2,
+    @Optional() @Inject(KLG_DISPATCHER) private dispatcher:KlgDispatcher
   ) { }
 
   ngOnInit(){
@@ -26,6 +29,7 @@ export class PausableDirective {
   togglePause(){
     this.pause = ! this.pause;
     this.updatePauseLayer();
+    if(this.dispatcher) this.dispatcher.dispatch( {type:'KLG_PAUSE', payload: this.pause })
   }
 
   updatePauseLayer(){
