@@ -27,12 +27,15 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/kl-pwa/src/favicon.ico",
-              "projects/kl-pwa/src/assets"
+              "projects/kl-pwa/src/assets",
+              "projects/kl-pwa/src/manifest.webmanifest"
             ],
             "styles": [
               "projects/kl-pwa/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": true,
+            "ngswConfigPath": "projects/kl-pwa/ngsw-config.json"
           },
           "configurations": {
             "production": {
@@ -90,7 +93,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/kl-pwa/src/favicon.ico",
-              "projects/kl-pwa/src/assets"
+              "projects/kl-pwa/src/assets",
+              "projects/kl-pwa/src/manifest.webmanifest"
             ],
             "styles": [
               "projects/kl-pwa/src/styles.scss"
