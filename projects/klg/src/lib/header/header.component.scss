@@ -1,6 +1,11 @@
 header{
     height: 100px;
     border-bottom: 1px black solid;
+    display: flex;
+}
+
+h1{
+    font-family: Arial;
 }
 
 header img{

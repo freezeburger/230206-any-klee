@@ -1,21 +1,17 @@
-<klg-header></klg-header>
+
+<klg-header>
+    {{pageTitle}}
+</klg-header>
+
 <klg-button>connexion</klg-button>
 
+<div>
+    <a [routerLink]=" ['/', nav ]" *ngFor="let nav of navLinks">{{nav | uppercase}}</a>
+</div>
 
-<!-- 
-    <klg-card-content> Custom Content </klg-card-content> 
- -->
+<klg-container>
+    <ng-content></ng-content>
+</klg-container>
 
-<klg-image source="https://picsum.photos/350/200"></klg-image>
-<klg-image source="xxx"></klg-image>
+<klg-footer></klg-footer>
 
-<klg-card>
-    <klg-card-title> Custom Title </klg-card-title>
-    <klg-card-content> Custom Content </klg-card-content> 
-</klg-card> 
-
-
-<!-- 
-    <klg-card black>Info</klg-card>
-    <klg-card orange>Warning</klg-card> 
--->

@@ -11,7 +11,7 @@ import { LayoutTwoColumnComponent } from './layout-two-column/layout-two-column.
     LayoutTwoColumnComponent
   ],
   imports: [
-    SharedModule
+    SharedModule,
   ],
   exports: [
     LayoutGenericComponent,
